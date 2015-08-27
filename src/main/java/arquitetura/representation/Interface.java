@@ -250,4 +250,93 @@ public class Interface extends Element {
 		return this.patternsOperations;
 	}
 	
+	   public List<RealizationRelationship> getRealizationImplementors() {
+			List<RealizationRelationship> realization = new ArrayList<RealizationRelationship>();
+			
+			for (RealizationRelationship r : getRelationshipHolder().getAllRealizations()) {
+				if (r.getSupplier().equals(this))
+					realization.add(r);
+			}
+			
+			return realization;
+		}
+		
+	               //Modificado Thais
+	        
+	        public void copyDependencyRelationship(Interface source, Interface targetInterface, Concern concern) {
+	            
+	            RelationshipsHolder newRelation = new RelationshipsHolder();
+	            newRelation.setRelationships(targetInterface.getRelationships());
+	            
+	            for(DependencyRelationship d: source.getDependencies()){
+	                boolean existe = false;
+	                for(DependencyRelationship dAlvo: targetInterface.getDependencies()){
+	                    
+	                    if(d.getSupplier().equals(dAlvo.getSupplier())){
+	                        existe = true;
+	                    }
+	                }
+	                if(!existe){
+	                    if (d.getSupplier().containsConcern(concern)){
+	                        DependencyRelationship newDependence = new DependencyRelationship(d.getSupplier(), targetInterface,d.getName());
+	                        newRelation.addRelationship(newDependence);
+	                    }
+	                }
+	                
+	            }
+	            targetInterface.setRelationshipHolder(newRelation);
+	                }
+	        
+	        //Modificado Thais
+	        
+	    public void copyRealizationRelationship (Interface source, Interface targetInterface, Concern concern){
+	    
+	            RelationshipsHolder newRelation2 = new RelationshipsHolder();
+	            newRelation2.setRelationships (targetInterface.getRelationships());
+	    
+	            for (RealizationRelationship r: source.getRealizationImplementors()){
+	                boolean existe = false;
+	                for (RealizationRelationship cAlvo: targetInterface.getRealizationImplementors()){
+	                    
+	                    if (r.getSupplier().equals(cAlvo.getSupplier())){
+	                        existe = true;
+	                    }
+	                }
+	                if (!existe){
+	                    if(r.getSupplier().containsConcern(concern)){
+	                        RealizationRelationship newImplementor = new RealizationRelationship(r.getSupplier(), targetInterface, r.getName(),r.getId());
+	                        newRelation2.addRelationship (newImplementor);
+	                    }
+	                }
+	    
+	                targetInterface.setRelationshipHolder (newRelation2);
+	    
+	            }
+
+	        }
+
+	        //Modificado Thais
+	        
+	        public void copyAllDependenciesSuppliers(Interface source, Interface targetInterface) {
+	            
+	            RelationshipsHolder newRelation = new RelationshipsHolder();
+	            newRelation.setRelationships(targetInterface.getRelationships());
+	            
+	            for(DependencyRelationship d: source.getDependencies()){
+	                boolean existe = false;
+	                for(DependencyRelationship dAlvo: targetInterface.getDependencies()){
+	                    
+	                    if(d.getSupplier().equals(dAlvo.getSupplier())){
+	                        existe = true;
+	                    }
+	                }
+	                if(!existe){
+	                    DependencyRelationship newDependence = new DependencyRelationship(d.getSupplier(), targetInterface,d.getName());
+	                    newRelation.addRelationship(newDependence);
+	                }
+	                
+	            }
+	            targetInterface.setRelationshipHolder(newRelation);
+	}
+	
 }

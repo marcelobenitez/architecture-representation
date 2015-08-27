@@ -2,7 +2,6 @@ package arquitetura.smarty.profile;
 
 import java.io.IOException;
 
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Enumeration;

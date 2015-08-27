@@ -21,13 +21,18 @@
 
 package jmetal.problems.singleObjective;
 
-import jmetal.core.*;
-import jmetal.encodings.solutionType.BinaryRealSolutionType;
-import jmetal.encodings.solutionType.PermutationSolutionType;
-import jmetal.encodings.variable.Binary;
-import jmetal.encodings.variable.Permutation;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StreamTokenizer;
 
-import java.io.* ;
+import jmetal.core.Problem;
+import jmetal.core.Solution;
+import jmetal.encodings.solutionType.PermutationSolutionType;
+import jmetal.encodings.variable.Permutation;
 
 /**
  * Class representing a TSP (Traveling Salesman Problem) problem.

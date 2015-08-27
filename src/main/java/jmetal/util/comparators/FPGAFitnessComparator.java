@@ -21,10 +21,9 @@
 
 package jmetal.util.comparators;
 
-import java.util.*;
+import java.util.Comparator;
 
-import jmetal.core.*;
-import jmetal.util.PseudoRandom;
+import jmetal.core.Solution;
 
 /**
  * This class implements a <code>Comparator</code> (a method for comparing

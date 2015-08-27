@@ -20,11 +20,12 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package jmetal.problems;
 
-import jmetal.core.*;
+import jmetal.core.Problem;
+import jmetal.core.Solution;
+import jmetal.core.Variable;
 import jmetal.encodings.solutionType.BinaryRealSolutionType;
 import jmetal.encodings.solutionType.RealSolutionType;
 import jmetal.util.JMException;
-import jmetal.util.Configuration.*;
 
 /**
  * Class representing problem OKA2

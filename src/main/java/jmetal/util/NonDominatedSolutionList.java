@@ -21,11 +21,13 @@
 
 package jmetal.util;
 
+import java.util.Comparator;
+import java.util.Iterator;
+
 import jmetal.core.Solution;
 import jmetal.core.SolutionSet;
-import jmetal.util.comparators.*;
-
-import java.util.*;
+import jmetal.util.comparators.DominanceComparator;
+import jmetal.util.comparators.SolutionComparator;
 
 /** 
  * This class implements an unbound list of non-dominated solutions

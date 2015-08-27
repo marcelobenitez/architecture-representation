@@ -1,7 +1,7 @@
 package jmetal.metrics.PLAMetrics.extensibility;
 
-import arquitetura.representation.Package;
 import arquitetura.representation.Class;
+import arquitetura.representation.Package;
 
 public class ExtensVarComponent {
 

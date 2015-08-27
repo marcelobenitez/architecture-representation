@@ -1,15 +1,16 @@
 package arquitetura.representation.relationship;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
 import arquitetura.helpers.ElementsTypes;
 import arquitetura.representation.Attribute;
 import arquitetura.representation.Class;
 import arquitetura.representation.Concern;
 import arquitetura.representation.Element;
 import arquitetura.representation.Method;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 
 /**

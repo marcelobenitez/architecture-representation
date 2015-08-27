@@ -21,12 +21,13 @@
 
 package jmetal.util.archive;
 
-import jmetal.core.*;
-
 import java.util.Comparator;
 
-import jmetal.util.comparators.*;
+import jmetal.core.Solution;
 import jmetal.util.Spea2Fitness;
+import jmetal.util.comparators.DominanceComparator;
+import jmetal.util.comparators.EqualSolutions;
+import jmetal.util.comparators.FitnessComparator;
 
 /**
  * This class implemens a bounded archive based on strength raw fitness (as

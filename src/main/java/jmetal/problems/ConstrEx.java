@@ -21,14 +21,12 @@
 
 package jmetal.problems;
 
-import java.io.IOException;
-
-import jmetal.core.*;
-import jmetal.encodings.solutionType.ArrayRealSolutionType;
+import jmetal.core.Problem;
+import jmetal.core.Solution;
+import jmetal.core.Variable;
 import jmetal.encodings.solutionType.BinaryRealSolutionType;
 import jmetal.encodings.solutionType.RealSolutionType;
 import jmetal.util.JMException;
-import jmetal.util.Configuration.*;
 
 /**
  * Class representing problem Constr_Ex

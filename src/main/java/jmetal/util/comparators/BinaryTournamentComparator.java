@@ -21,7 +21,7 @@
 
 package jmetal.util.comparators;
 
-import java.util.*;
+import java.util.Comparator;
 
 import jmetal.core.Solution;
 

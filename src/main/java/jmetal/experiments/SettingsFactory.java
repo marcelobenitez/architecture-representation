@@ -25,7 +25,6 @@ import java.lang.reflect.Constructor;
 
 import jmetal.util.Configuration;
 import jmetal.util.JMException;
-import jmetal.experiments.settings.*;
 /**
  * This class represents a factory for Setting object
  */

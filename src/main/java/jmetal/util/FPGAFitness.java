@@ -21,10 +21,11 @@
 
 package jmetal.util;
 
-import jmetal.core.*;
-import jmetal.util.comparators.*;
+import java.util.Comparator;
 
-import java.util.*                      ;
+import jmetal.core.Problem;
+import jmetal.core.SolutionSet;
+import jmetal.util.comparators.DominanceComparator;
 
 /**
  * This class implements facilities for calculating the fitness for the

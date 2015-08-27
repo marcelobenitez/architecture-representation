@@ -21,13 +21,11 @@
 
 package jmetal.problems;
 
-import jmetal.core.*;
-import jmetal.encodings.solutionType.ArrayRealSolutionType;
-import jmetal.encodings.solutionType.BinaryRealSolutionType;
+import jmetal.core.Problem;
+import jmetal.core.Solution;
+import jmetal.core.Variable;
 import jmetal.encodings.solutionType.IntRealSolutionType;
-import jmetal.encodings.solutionType.RealSolutionType;
 import jmetal.util.JMException;
-import jmetal.util.Configuration.*;
 
 /**
  * Class representing a problem having N integer and M real variables.

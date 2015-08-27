@@ -1,6 +1,5 @@
 package jmetal.metrics.conventionalMetrics;
 import java.util.Arrays;
-
 import java.util.HashMap;
 
 public class Estatistica {

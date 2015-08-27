@@ -23,7 +23,6 @@ package jmetal.operators.selection;
 
 import java.util.HashMap;
 
-import jmetal.core.Operator;
 import jmetal.util.Configuration;
 import jmetal.util.JMException;
 

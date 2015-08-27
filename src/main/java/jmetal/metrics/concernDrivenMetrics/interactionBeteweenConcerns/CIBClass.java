@@ -4,11 +4,11 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import arquitetura.representation.Architecture;
+import arquitetura.representation.Class;
 import arquitetura.representation.Concern;
 import arquitetura.representation.Element;
 import arquitetura.representation.Interface;
 import arquitetura.representation.Method;
-import arquitetura.representation.Class;
 
 public class CIBClass {
 

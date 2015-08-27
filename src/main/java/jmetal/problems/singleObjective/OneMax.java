@@ -21,8 +21,8 @@
 
 package jmetal.problems.singleObjective;
 
-import jmetal.core.*;
-import jmetal.encodings.solutionType.BinaryRealSolutionType;
+import jmetal.core.Problem;
+import jmetal.core.Solution;
 import jmetal.encodings.solutionType.BinarySolutionType;
 import jmetal.encodings.variable.Binary;
 

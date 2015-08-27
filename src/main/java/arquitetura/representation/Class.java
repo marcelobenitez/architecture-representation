@@ -14,7 +14,9 @@ import arquitetura.exceptions.MethodNotFoundException;
 import arquitetura.flyweights.VariantFlyweight;
 import arquitetura.helpers.UtilResources;
 import arquitetura.representation.relationship.AssociationClassRelationship;
+import arquitetura.representation.relationship.DependencyRelationship;
 import arquitetura.representation.relationship.MemberEnd;
+import arquitetura.representation.relationship.RealizationRelationship;
 import arquitetura.representation.relationship.RelationshiopCommons;
 import arquitetura.representation.relationship.Relationship;
 import arquitetura.touml.Types.Type;
@@ -406,5 +408,83 @@ public class Class extends Element {
     public PatternsOperations getPatternsOperations() {
 	return this.patternsOperations;
     }
+    
+    //modificado Thais
+    
+    public List<DependencyRelationship> getDependencies() {
+		List<DependencyRelationship> dependencies = new ArrayList<DependencyRelationship>();
+		
+		for (DependencyRelationship dependency : getRelationshipHolder().getAllDependencies()) {
+			if (dependency.getSupplier().equals(this))
+				dependencies.add(dependency);
+		}
+                
+		return dependencies;
+	}
+    
+    //Modificado Thais
+    public List<RealizationRelationship> getImplementors() {
+		List<RealizationRelationship> realization = new ArrayList<RealizationRelationship>();
+		
+		for (RealizationRelationship r : getRelationshipHolder().getAllRealizations()) {
+			if (r.getSupplier().equals(this))
+				realization.add(r);
+		}
+		
+		return realization;
+	}
+    
+    //Modificado Thais
+    
+    public void copyDependencyRelationship (Class source, Class targetClass, Concern concern){
+        
+        RelationshipsHolder newRelation1 = new RelationshipsHolder();
+        newRelation1.setRelationships (targetClass.getRelationships());
 
+        for(DependencyRelationship d1: source.getDependencies()){
+            boolean existe = false;
+            for (DependencyRelationship cAlvo: targetClass.getDependencies()){
+
+                if(d1.getSupplier().equals(cAlvo.getSupplier())){
+                    existe = true;
+                }
+            }
+             if (!existe){
+                if(d1.getSupplier().containsConcern(concern)){
+                    DependencyRelationship newDependence = new DependencyRelationship(d1.getSupplier(), targetClass, d1.getName());
+                    newRelation1.addRelationship(newDependence);
+                }
+            }
+        }
+        targetClass.setRelationshipHolder (newRelation1);
+
+    }
+    
+    //Modificado Thais
+    
+    public void copyRealizationRelationship (Class source, Class targetClass, Concern concern){
+
+        RelationshipsHolder newRelation2 = new RelationshipsHolder();
+        newRelation2.setRelationships (targetClass.getRelationships());
+
+        for (RealizationRelationship r: source.getImplementors()){
+            boolean existe = false;
+            for (RealizationRelationship cAlvo: targetClass.getImplementors()){
+                
+                if (r.getSupplier().equals(cAlvo.getSupplier())){
+                    existe = true;
+                }
+            }
+            if (!existe){
+                if(r.getSupplier().containsConcern(concern)){
+                    RealizationRelationship newImplementor = new RealizationRelationship(r.getSupplier(), targetClass, r.getName(),r.getId());
+                    newRelation2.addRelationship (newImplementor);
+                }
+            }
+
+            targetClass.setRelationshipHolder (newRelation2);
+
+        }
+
+    }
 }

@@ -24,12 +24,10 @@ package jmetal.operators.selection;
 import java.util.Comparator;
 import java.util.HashMap;
 
-import jmetal.core.Operator;
 import jmetal.core.Solution;
 import jmetal.core.SolutionSet;
-import jmetal.problems.OPLA;
-import jmetal.util.comparators.DominanceComparator;
 import jmetal.util.PseudoRandom;
+import jmetal.util.comparators.DominanceComparator;
 
 /**
  * This class implements an operator for binary selections using the same code

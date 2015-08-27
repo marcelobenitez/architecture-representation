@@ -33,9 +33,8 @@ import jmetal.core.Problem;
 import jmetal.core.SolutionSet;
 import jmetal.experiments.Experiment;
 import jmetal.experiments.Settings;
-import jmetal.problems.ProblemFactory;
+import jmetal.qualityIndicator.QualityIndicator;
 import jmetal.util.JMException;
-import jmetal.qualityIndicator.* ;
 /**
  * Class implementing the steps to run an experiment
  */

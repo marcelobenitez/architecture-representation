@@ -543,4 +543,89 @@ public class OPLA extends Problem {
 		allComponents.clear();
 		
 	}
+	
+	public double evaluateACOMP(Architecture architecture) {
+    	double acompFitness = 0.0;
+    	DependencyIn depIN = new DependencyIn(architecture);
+    	DependencyOut depOUT = new DependencyOut(architecture);
+    	acompFitness = depIN.getResults() + depOUT.getResults();
+    	return acompFitness;
+    }
+    public double evaluateACLASS(Architecture architecture) {
+    	double aclassFitness = 0.0;
+    	ClassDependencyIn CDepIN = new ClassDependencyIn(architecture);
+    	ClassDependencyOut CDepOUT = new ClassDependencyOut(architecture);
+    	aclassFitness = CDepIN.getResults() + CDepOUT.getResults();
+    	return aclassFitness;
+    }
+    public double evaluateTAM(Architecture architecture) {
+    	double tamFitness = 0.0;
+    	MeanNumOpsByInterface NumOps = new MeanNumOpsByInterface(architecture);
+    	
+    	tamFitness = NumOps.getResults();
+    	return tamFitness;
+    }
+    public double evaluateCOE(Architecture architecture) {
+    	double coeFitness = 0.0;
+    	double sumLCC = 0.0;
+    	
+    	RelationalCohesion rc = new RelationalCohesion(architecture);
+    	
+    	
+    	LCC lcc = new LCC(architecture);
+    	for (LCCComponentResult c : lcc.getResults()) {
+    		sumLCC += c.numberOfConcerns();
+    	}
+    	
+    	coeFitness = rc.getResults() + sumLCC;
+    	return coeFitness;
+    }
+    public double evaluateDC(Architecture architecture) {
+    	double dcFitness = 0.0;
+    	double sumCDAC = 0.0;
+    	double sumCDAI = 0.0;
+    	double sumCDAO = 0.0;
+    	
+    	CDAI cdai = new CDAI(architecture);
+    	for (CDAIResult c : cdai.getResults()) {
+    		sumCDAI += c.getElements().size();
+    	}
+    	
+    	CDAO cdao = new CDAO(architecture);
+    	for (CDAOResult c : cdao.getResults()) {
+    		sumCDAO += c.getElements().size();
+    	}
+    	
+    	CDAC cdac = new CDAC(architecture);
+    	for (CDACResult c : cdac.getResults()) {
+    		sumCDAC += c.getElements().size();
+    	}
+    	
+    	dcFitness = sumCDAI + sumCDAO+ sumCDAC;
+    	return dcFitness;
+    }
+    public double evaluateEC(Architecture architecture) {
+    	double ecFitness = 0.0;
+    	double sumCIBC = 0.0;
+    	double sumIIBC = 0.0;
+    	double sumOOBC = 0.0;
+    	
+    	CIBC cibc = new CIBC(architecture);
+    	for (CIBCResult c : cibc.getResults().values()) {
+    		sumCIBC += c.getInterlacedConcerns().size();
+    	}
+    	
+    	IIBC iibc = new IIBC(architecture);
+    	for (IIBCResult c : iibc.getResults().values()) {
+    		sumIIBC += c.getInterlacedConcerns().size();
+    	}
+    	
+    	OOBC oobc = new OOBC(architecture);
+    	for (OOBCResult c : oobc.getResults().values()) {
+    		sumOOBC += c.getInterlacedConcerns().size();
+    	}
+    	
+    	ecFitness = sumCIBC + sumIIBC + sumOOBC;
+    	return ecFitness;
+    }
 }

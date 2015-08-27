@@ -21,7 +21,7 @@
 
 package jmetal.util;
 
-import jmetal.core.*;
+import jmetal.core.SolutionSet;
 
 /**
  * Class representing neighborhoods for a <code>Solution</code> into a

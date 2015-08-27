@@ -23,7 +23,6 @@ package jmetal.experiments;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
-import java.util.Properties;
 
 import jmetal.core.Algorithm;
 import jmetal.core.Operator;
@@ -37,7 +36,6 @@ import jmetal.operators.crossover.CrossoverFactory;
 import jmetal.operators.mutation.Mutation;
 import jmetal.operators.mutation.MutationFactory;
 import jmetal.util.JMException;
-import jmetal.util.Configuration.*;
 
 /**
  * Class representing Settings objects. 

@@ -3,7 +3,6 @@ package arquitetura.builders;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Operation;

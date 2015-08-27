@@ -21,17 +21,13 @@
 
 package jmetal.experiments;
 
-import java.util.logging.Logger;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Properties;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import jmetal.core.Algorithm;
-import jmetal.core.Problem;
 import jmetal.experiments.settings.NSGAII_Settings;
-import jmetal.experiments.util.RBoxplot;
-import jmetal.experiments.util.RWilcoxon;
 import jmetal.util.JMException;
 
 /**

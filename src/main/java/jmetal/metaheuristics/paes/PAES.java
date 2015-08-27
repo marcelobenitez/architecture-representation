@@ -21,18 +21,16 @@
 
 package jmetal.metaheuristics.paes;
 
-import jmetal.util.comparators.*;
-import jmetal.util.archive.AdaptiveGridArchive;
-import jmetal.core.*;
-import jmetal.util.JMException;
-import jmetal.problems.OPLA;
-
 import java.util.Comparator;
 
-import arquitetura.exceptions.ClassNotFound;
-import arquitetura.exceptions.ConcernNotFoundException;
-import arquitetura.exceptions.NotFoundException;
-import arquitetura.exceptions.PackageNotFound;
+import jmetal.core.Algorithm;
+import jmetal.core.Operator;
+import jmetal.core.Problem;
+import jmetal.core.Solution;
+import jmetal.core.SolutionSet;
+import jmetal.util.JMException;
+import jmetal.util.archive.AdaptiveGridArchive;
+import jmetal.util.comparators.DominanceComparator;
 
 /**
  * This class implements the PAES algorithm. 

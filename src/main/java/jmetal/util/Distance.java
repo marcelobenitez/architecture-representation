@@ -21,7 +21,9 @@
 
 package jmetal.util;
 
-import jmetal.core.*;
+import jmetal.core.Solution;
+import jmetal.core.SolutionSet;
+import jmetal.core.Variable;
 import jmetal.util.comparators.ObjectiveComparator;
 
 /**

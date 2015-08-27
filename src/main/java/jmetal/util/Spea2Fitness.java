@@ -21,10 +21,17 @@
 
 package jmetal.util;
 
-import jmetal.core.*;
-import jmetal.util.comparators.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
-import java.util.*                      ;
+import jmetal.core.SolutionSet;
+import jmetal.util.comparators.DominanceComparator;
+import jmetal.util.comparators.FitnessComparator;
 
 /**
  * This class implements some facilities for calculating the Spea2 fitness

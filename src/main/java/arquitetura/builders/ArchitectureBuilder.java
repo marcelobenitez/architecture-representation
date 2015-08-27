@@ -1,5 +1,22 @@
 package arquitetura.builders;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.uml2.uml.Abstraction;
+import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.AssociationClass;
+import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Dependency;
+import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Realization;
+import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Usage;
+
 import arquitetura.exceptions.ModelIncompleteException;
 import arquitetura.exceptions.ModelNotFoundException;
 import arquitetura.exceptions.SMartyProfileNotAppliedToModelExcepetion;
@@ -21,22 +38,8 @@ import arquitetura.representation.Interface;
 import arquitetura.representation.Variability;
 import arquitetura.representation.relationship.AssociationClassRelationship;
 import arquitetura.representation.relationship.Relationship;
+
 import com.rits.cloning.Cloner;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.uml2.uml.Abstraction;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.AssociationClass;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Dependency;
-import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Realization;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.Usage;
 
 /**
  * Builder responsável por criar a arquitetura.
@@ -79,7 +82,7 @@ public class ArchitectureBuilder {
 	 * Cria a arquitetura. Primeiramente é carregado o model (arquivo .uml), após isso é instanciado o objeto {@link Architecture}. <br/>
 	 * Feito isso, é chamado método "initialize", neste método é crializada a criação dos Builders. <br/>
 	 * 
-	 * Em seguida, é carregado as os pacotes e suas classes. Também é carrega as classes que não pertencem a pacotes. <br/>
+	 * Em seguida, é carregado os pacotes e suas classes. Também é carregada as classes que não pertencem a pacotes. <br/>
 	 * Após isso são carregadas as variabilidade. <br/><br/>
 	 * 
 	 * InterClassRelationships </br>

@@ -21,9 +21,9 @@
 
 package jmetal.util.comparators;
 
-import jmetal.core.Solution;
-
 import java.util.Comparator;
+
+import jmetal.core.Solution;
 
 /**
  * This class implements a <code>Comparator</code> (a method for comparing

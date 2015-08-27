@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.HashSet;
 
 import arquitetura.representation.Attribute;
+import arquitetura.representation.Class;
 import arquitetura.representation.Concern;
 import arquitetura.representation.Method;
-import arquitetura.representation.Class;
 
 public class LCCClassComponentResult {
 

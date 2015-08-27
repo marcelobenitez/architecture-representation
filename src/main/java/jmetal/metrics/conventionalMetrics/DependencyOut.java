@@ -1,11 +1,9 @@
 package jmetal.metrics.conventionalMetrics;
-import java.util.ArrayList;
 import java.util.List;
 
 import arquitetura.representation.Architecture;
 import arquitetura.representation.Package;
 import arquitetura.representation.relationship.DependencyRelationship;
-import arquitetura.representation.relationship.Relationship;
 
 public class DependencyOut {
 
